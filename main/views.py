@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Task
 from .forms import TaskForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def index(request):
@@ -22,7 +23,7 @@ def create(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('/')
         else:
             error = 'Форма задана неверно'
 

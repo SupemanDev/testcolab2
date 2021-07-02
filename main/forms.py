@@ -17,6 +17,6 @@ class TaskForm(ModelForm):
             }),
             'deadline': DateTimeInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Введите дедлайн'
+                'placeholder': ''
             })
         }
